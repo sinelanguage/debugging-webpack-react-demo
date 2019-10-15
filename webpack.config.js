@@ -14,7 +14,7 @@ module.exports = {
     // pathname: 'currentDir/dist'
     path: path.resolve(__dirname, 'dist'),
   },
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
@@ -23,7 +23,7 @@ module.exports = {
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    // new CleanWebpackPlugin(pathsToClean),
+    new CleanWebpackPlugin(pathsToClean),
   ],
   module: {
     rules: [
@@ -50,7 +50,7 @@ module.exports = {
   mode: 'production',
   optimization: {
     namedModules: true,
-    minimize: true,
+    minimize: false,
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
