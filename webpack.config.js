@@ -24,6 +24,10 @@ module.exports = {
   module: {
     rules: [
       {
+        // Out of the box, webpack only understands JavaScript and JSON files.
+        // Loaders allow webpack to process other types of files and convert them into
+        // valid modules that can be consumed by your application and added to the dependency graph.
+        //
         // which fileType to use the loader
         test: /\.css$/,
         // recommended by webpack to use style-loader (add css to dom) and css-loader
@@ -32,7 +36,10 @@ module.exports = {
       },
     ],
   },
-  mode: 'development',
+  mode: 'production',
+  optimization: {
+    namedModules: true,
+  },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
