@@ -46,10 +46,11 @@ module.exports = {
       },
     ],
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: { extensions: ['*', '.js', '.jsx'] },
   mode: 'production',
   optimization: {
     namedModules: true,
+    minimize: true,
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
