@@ -11,15 +11,19 @@ module.exports = {
     filename: 'bundle.js',
     // __dirname is global node convenience variable which returns the current path
     // path.resolve takes first arg and concats it to second arg to make a full
-    // pathname: "currentDir/dist"
+    // pathname: 'currentDir/dist'
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/index.html'),
+      fileName: 'index.html',
+      inject: 'body',
+    }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(pathsToClean),
+    // new CleanWebpackPlugin(pathsToClean),
   ],
   module: {
     rules: [
@@ -34,8 +38,15 @@ module.exports = {
         // (interprets @import and url()) together
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env'] }
+      },
     ],
   },
+  resolve: { extensions: ["*", ".js", ".jsx"] },
   mode: 'production',
   optimization: {
     namedModules: true,
