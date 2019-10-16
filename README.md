@@ -72,12 +72,13 @@ https://webpack.js.org/configuration/devtool/
 5. Move to this repo `master`
 6. Run local build
 7. Show development bundle.js
-8. Put breakpoint in sourcemapped src file
-9. Show that it works
-10. Prettify the bundled file
-11. Show the breakpoint again.
-12. Toggle to production mode
-13. Repeat steps 6 to 11, show that breakpoint links to bundle file
-14. Stash stuff and checkout `with-react` branch
-15. Show react without JSX example
-16. Start at step 4 again.
+8. Toggle different settings in webpack config: `mode, minimize and devtool`
+9. Put breakpoint in sourcemapped src file
+10. Show that it works
+11. Prettify the bundled file
+12. Show the breakpoint again.
+13. Toggle to production mode
+14. Repeat steps 6 to 11, show that breakpoint links to bundle file
+15. Stash stuff and checkout `with-react` branch
+16. Show react without JSX example
+17. Start at step 4 again.
