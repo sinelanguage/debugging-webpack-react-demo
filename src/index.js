@@ -9,8 +9,9 @@ console.log('Result from partial application: ', logResultFromPartialApplication
 
 
 function foo() {
-  const num = 0;
-
+  let num = 0;
+  num = num + 10;
+  num = num + 20;
   const element = document.createElement('h1');
   element.innerHTML = 'Hello Webpack';
   element.classList.add('foo');
