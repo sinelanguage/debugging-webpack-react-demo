@@ -50,7 +50,7 @@ module.exports = {
   mode: 'production',
   optimization: {
     namedModules: true,
-    minimize: false,
+    minimize: true,
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
