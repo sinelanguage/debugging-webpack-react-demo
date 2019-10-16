@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import './style/style.css';
 
 export default class Two extends Component {
-	constructor() {
-		super();
-		this.state = {
-			showSomething: false,
-		};
-		this.handleClick = this.handleClick.bind(this);
+	state = {
+		showSomething: false,
 	}
-	handleClick() {
+	handleClick = () => {
 		console.log('clicked');
 		this.setState({
 			showSomething: !this.state.showSomething,
